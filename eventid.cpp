@@ -18,7 +18,8 @@ void hook::Run(const char* name)
 		#ifdef AutoCheck
 		if (cHook)
 		#endif
-			(*cHook->callback)();
+			if (cHook->name == name)
+				(*cHook->callback)();
 
 			
 	}
